@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 @Component({
   selector: 'app-root',
-  template: '<button (click)="auth.loginWithRedirect()">Log in</button>',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
