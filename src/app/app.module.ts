@@ -5,6 +5,7 @@ import { QRCodeModule } from 'angularx-qrcode';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AppComponent } from './app.component';
       domain: 'dev-kqh08sd57e0x6q7d.us.auth0.com',
       clientId: '8wTd1LrhVay3MCcirVotXLV18bAUYPYk'
     }),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
