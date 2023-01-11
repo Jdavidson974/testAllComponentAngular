@@ -1,8 +1,10 @@
 <div class="row">
   <div class="col-6">
-    <button (click)="auth.loginWithRedirect()">Log in</button>
+    <button (click)="loginWithRedirect()">Log in</button>
   </div>
   <div class="col-6">
     <qrcode qrdata="https://cordobo.com/2444-angular4-qrcode-generator-component/" [width]="256"></qrcode>
   </div>
+
+  <button (click)="showToken()"> show token</button>
 </div>
