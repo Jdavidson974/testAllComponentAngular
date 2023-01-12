@@ -5,6 +5,9 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CoreModule } from './core/core.module';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -12,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     QRCodeModule,
     NgbModule,
@@ -20,7 +24,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
       domain: '',
       enabledProviders: ['facebook', 'google',]
     }),
-
+    CoreModule,
+    // TestNestModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

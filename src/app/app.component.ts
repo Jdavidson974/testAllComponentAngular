@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { AuthService } from '@eartho/one-client-angular';
 import { catchError, tap } from 'rxjs';
+import { TestNestServicesService } from './test-nest/services/test-nest-services.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,8 @@ import { catchError, tap } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, private testService: TestNestServicesService) { }
   title = 'testAuthGoogle';
-  @ViewChild('loginRef', { static: true }) loginElement!: ElementRef;
   ngOnInit() {
   }
   loginWithRedirect() {
@@ -38,7 +38,6 @@ export class AppComponent {
     }
   }
   showToken() {
-    // console.log(localStorage.getItem('token'));
-
+    this.testService.test();
   }
 }
